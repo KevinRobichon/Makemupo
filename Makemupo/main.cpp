@@ -9,7 +9,7 @@
 class TestApp : public MKEngine::Application {
 private:
 	void render() {
-		GLfloat color[] = { 1.0, 0.0, 0.0, 1.0 };
+		GLfloat color[] = { 1.0, 1.0, 0.0, 1.0 };
 		glClearBufferfv(GL_COLOR, 0, color);
 	}
 };
