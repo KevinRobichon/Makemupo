@@ -40,8 +40,8 @@
     <ClCompile Include="Prototype.cpp">
       <Filter>MKPatterns</Filter>
     </ClCompile>
-    <ClCompile Include="Singleton.cpp">
-      <Filter>MKPatterns</Filter>
+    <ClCompile Include="VertexArray.cpp">
+      <Filter>MKGraphics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -69,8 +69,8 @@
     <ClInclude Include="Prototype.h">
       <Filter>MKPatterns</Filter>
     </ClInclude>
-    <ClInclude Include="Singleton.h">
-      <Filter>MKPatterns</Filter>
+    <ClInclude Include="VertexArray.h">
+      <Filter>MKGraphics</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
