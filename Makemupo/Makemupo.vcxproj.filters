@@ -28,6 +28,9 @@
     <ClCompile Include="Application.cpp">
       <Filter>MKEngine</Filter>
     </ClCompile>
+    <ClCompile Include="Buffer.cpp">
+      <Filter>MKGraphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Program.h">
@@ -44,6 +47,9 @@
     </ClInclude>
     <ClInclude Include="Application.h">
       <Filter>MKEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Buffer.h">
+      <Filter>MKGraphics</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
