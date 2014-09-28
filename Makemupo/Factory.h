@@ -2,14 +2,14 @@
 
 #include "Prototype.h"
 
-namespace Patterns
+namespace MKPatterns
 {
 
-template <typename T> class Factory
-{
-public:
-	Factory();
-	~Factory();
-};
+	template <typename T> class Factory
+	{
+	public:
+		Factory();
+		~Factory();
+	};
 
 };

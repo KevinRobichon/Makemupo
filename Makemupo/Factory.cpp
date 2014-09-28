@@ -1,7 +1,6 @@
 #include "Factory.h"
 
-
-namespace Patterns
+namespace MKPatterns
 {
 
 };

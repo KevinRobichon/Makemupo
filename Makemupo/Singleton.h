@@ -1,6 +1,6 @@
 #pragma once
 
-namespace Patterns
+namespace MKPatterns
 {
 
 	template<typename T> class Singleton

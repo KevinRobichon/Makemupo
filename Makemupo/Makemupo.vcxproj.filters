@@ -11,8 +11,8 @@
     <Filter Include="MKEngine">
       <UniqueIdentifier>{3b5034ea-703b-4aec-94d4-8c8408414d8a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Patterns">
-      <UniqueIdentifier>{0802dae2-03f2-4558-9174-d8f2958f39d4}</UniqueIdentifier>
+    <Filter Include="MKPatterns">
+      <UniqueIdentifier>{7ad1fb0b-496a-42e1-90d9-945e3d07fdfe}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -34,14 +34,14 @@
     <ClCompile Include="Buffer.cpp">
       <Filter>MKGraphics</Filter>
     </ClCompile>
-    <ClCompile Include="Singleton.cpp">
-      <Filter>Patterns</Filter>
+    <ClCompile Include="Factory.cpp">
+      <Filter>MKPatterns</Filter>
     </ClCompile>
     <ClCompile Include="Prototype.cpp">
-      <Filter>Patterns</Filter>
+      <Filter>MKPatterns</Filter>
     </ClCompile>
-    <ClCompile Include="Factory.cpp">
-      <Filter>Patterns</Filter>
+    <ClCompile Include="Singleton.cpp">
+      <Filter>MKPatterns</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -63,14 +63,14 @@
     <ClInclude Include="Buffer.h">
       <Filter>MKGraphics</Filter>
     </ClInclude>
-    <ClInclude Include="Singleton.h">
-      <Filter>Patterns</Filter>
+    <ClInclude Include="Factory.h">
+      <Filter>MKPatterns</Filter>
     </ClInclude>
     <ClInclude Include="Prototype.h">
-      <Filter>Patterns</Filter>
+      <Filter>MKPatterns</Filter>
     </ClInclude>
-    <ClInclude Include="Factory.h">
-      <Filter>Patterns</Filter>
+    <ClInclude Include="Singleton.h">
+      <Filter>MKPatterns</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

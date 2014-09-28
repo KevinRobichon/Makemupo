@@ -1,6 +1,6 @@
 #include "Singleton.h"
 
-namespace Patterns
+namespace MKPatterns
 {
 
 };

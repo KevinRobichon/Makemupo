@@ -1,6 +1,6 @@
 #include "Prototype.h"
 
-namespace Patterns
+namespace MKPatterns
 {
 
 };
