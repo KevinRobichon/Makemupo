@@ -4,7 +4,7 @@ namespace MKGraphics {
 
 	Shader::Shader(Type type) : _type{ type }, _compiled{ false }
 	{
-		_id = glCreateShader(GLenum(_type));
+		_id = glCreateShader((GLenum)_type);
 	}
 
 	Shader::~Shader()

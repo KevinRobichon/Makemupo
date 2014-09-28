@@ -13,9 +13,11 @@ namespace MKGraphics {
 		~Program();
 
 		void linkShader(Shader& shader);
+		void link();
 		void use();
 
 	private:
+		bool _linked;
 	};
 
 }

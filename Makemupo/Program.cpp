@@ -2,7 +2,7 @@
 
 namespace MKGraphics {
 
-	Program::Program()
+	Program::Program() : _linked{false}
 	{
 		_id = glCreateProgram();
 	}
@@ -19,8 +19,15 @@ namespace MKGraphics {
 		glAttachShader(_id, shader.getID());
 	}
 
+	void Program::link() {
+		glLinkProgram(_id);
+		_linked = true;
+	}
+
 	void Program::use()
 	{
+		if (!_linked)
+			link();
 		glUseProgram(_id);
 	}
 
