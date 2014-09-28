@@ -22,8 +22,7 @@ namespace MKGraphics {
 	void VertexArray::bindAndReset() {
 		_attribIndex = 0;
 		_attribOffset = 0;
-		glBindVertexArray(_id);
-		_bound = this;
+		bind();
 	}
 
 	void VertexArray::unbind() {
