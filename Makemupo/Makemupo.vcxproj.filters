@@ -31,6 +31,9 @@
     <ClCompile Include="Buffer.cpp">
       <Filter>MKGraphics</Filter>
     </ClCompile>
+    <ClCompile Include="VertexArray.cpp">
+      <Filter>MKGraphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Program.h">
@@ -49,6 +52,9 @@
       <Filter>MKEngine</Filter>
     </ClInclude>
     <ClInclude Include="Buffer.h">
+      <Filter>MKGraphics</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexArray.h">
       <Filter>MKGraphics</Filter>
     </ClInclude>
   </ItemGroup>
