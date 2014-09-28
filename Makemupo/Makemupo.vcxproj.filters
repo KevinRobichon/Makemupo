@@ -5,29 +5,45 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    <Filter Include="MKGraphics">
+      <UniqueIdentifier>{442dedde-57ee-4554-809d-da1b13d8479c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="MKEngine">
+      <UniqueIdentifier>{3b5034ea-703b-4aec-94d4-8c8408414d8a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>MKGraphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Program.cpp">
+      <Filter>MKGraphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>MKGraphics</Filter>
+    </ClCompile>
     <ClCompile Include="Application.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>MKEngine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Program.h">
+      <Filter>MKGraphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>MKGraphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>MKGraphics</Filter>
+    </ClInclude>
     <ClInclude Include="CommonGraphics.h">
-      <Filter>Header Files</Filter>
+      <Filter>MKGraphics</Filter>
     </ClInclude>
     <ClInclude Include="Application.h">
-      <Filter>Header Files</Filter>
+      <Filter>MKEngine</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
