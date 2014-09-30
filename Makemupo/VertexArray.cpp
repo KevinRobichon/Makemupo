@@ -1,10 +1,10 @@
 #include "VertexArray.h"
-
+#include <iostream>
 namespace MKGraphics {
 
 	VertexArray *VertexArray::_bound;
 
-	VertexArray::VertexArray() : _attribIndex{ 0 }, _attribOffset{ 0 }
+	VertexArray::VertexArray(Program& program) : _attribOffset{ 0 }, _program{program}
 	{
 		glGenVertexArrays(1, &_id);
 	}
@@ -20,7 +20,6 @@ namespace MKGraphics {
 	}
 
 	void VertexArray::bindAndReset() {
-		_attribIndex = 0;
 		_attribOffset = 0;
 		bind();
 	}
@@ -30,12 +29,12 @@ namespace MKGraphics {
 		_bound = NULL;
 	}
 
-	void VertexArray::attrib(int dimension, Type type, size_t size) {
+	void VertexArray::attrib(const char *name, int dimension, Type type, size_t size) {
 		if (_bound != this)
 			bind();
-		glVertexAttribPointer(_attribIndex, dimension, (GLenum)type, (GLenum)Bool::False, size, (void *)_attribOffset);
-		glEnableVertexAttribArray(_attribIndex);
-		++_attribIndex;
+		int location = _program.attribLocation(name);
+		glVertexAttribPointer(location, dimension, (GLenum)type, (GLenum)Bool::False, size, (void *)_attribOffset);
+		glEnableVertexAttribArray(location);
 		_attribOffset += size;
 	}
 

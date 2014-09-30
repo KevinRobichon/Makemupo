@@ -2,23 +2,24 @@
 
 #include "CommonGraphics.h"
 #include "Object.h"
+#include "Program.h"
 
 namespace MKGraphics {
 
 	class VertexArray : public Object
 	{
 	public:
-		VertexArray();
+		VertexArray(Program& program);
 		~VertexArray();
 
 		void bind();
 		void bindAndReset();
 		void unbind();
-		void attrib(int dimension, Type type, size_t size);
+		void attrib(const char *name, int dimension, Type type, size_t size);
 
 	private:
-		int _attribIndex;
 		size_t _attribOffset;
+		Program& _program;
 
 		static VertexArray *_bound;
 	};

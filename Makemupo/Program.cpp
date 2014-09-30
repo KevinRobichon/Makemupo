@@ -31,4 +31,12 @@ namespace MKGraphics {
 		glUseProgram(_id);
 	}
 
+	int Program::attribLocation(const char *name) {
+		return glGetAttribLocation(_id, name);
+	}
+
+	int Program::uniformLocation(const char *name) {
+		return glGetUniformLocation(_id, name);
+	}
+
 }

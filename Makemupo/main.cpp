@@ -51,14 +51,15 @@ private:
 		program = new MKGraphics::Program();
 		program->linkShader(vertexShader);
 		program->linkShader(fragmentShader);
+		program->link();
 
 		vbo = new MKGraphics::Buffer();
 		vbo->allocate(sizeof(vertices), MKGraphics::Buffer::Usage::StaticDraw);
 		vbo->fill(0, sizeof(vertices), vertices);
 
-		vao = new MKGraphics::VertexArray();
+		vao = new MKGraphics::VertexArray(*program);
 		vao->bindAndReset();
-		vao->attrib(3, MKGraphics::Type::Float, 3 * sizeof(float));
+		vao->attrib("position", 3, MKGraphics::Type::Float, 3 * sizeof(float));
 		vao->unbind();
 	}
 

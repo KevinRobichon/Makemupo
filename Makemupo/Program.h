@@ -16,6 +16,9 @@ namespace MKGraphics {
 		void link();
 		void use();
 
+		int attribLocation(const char *name);
+		int uniformLocation(const char *name);
+
 	private:
 		bool _linked;
 	};
