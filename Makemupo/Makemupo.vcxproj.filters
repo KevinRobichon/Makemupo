@@ -43,6 +43,9 @@
     <ClCompile Include="VertexArray.cpp">
       <Filter>MKGraphics</Filter>
     </ClCompile>
+    <ClCompile Include="Vertex.cpp">
+      <Filter>MKEngine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Program.h">
@@ -71,6 +74,9 @@
     </ClInclude>
     <ClInclude Include="VertexArray.h">
       <Filter>MKGraphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Vertex.h">
+      <Filter>MKEngine</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -2,14 +2,20 @@
 
 namespace MKGraphics {
 
-	Shader::Shader(Type type) : _type{ type }, _compiled{ false }
+	Shader::Shader()
 	{
-		_id = glCreateShader((GLenum)_type);
 	}
 
 	Shader::~Shader()
 	{
 		glDeleteShader(_id);
+	}
+
+	void Shader::init(Type type)
+	{
+		_type = type;
+		_compiled = false;
+		_id = glCreateShader((GLenum)_type);
 	}
 
 	void Shader::setSource(const char *source)

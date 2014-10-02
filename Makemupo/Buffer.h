@@ -26,6 +26,7 @@ namespace MKGraphics {
 
 		Buffer();
 		~Buffer();
+		void init();
 
 		void allocate(size_t size, Usage usage);
 		void fill(size_t offset, size_t size, void *data);

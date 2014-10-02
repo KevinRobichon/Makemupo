@@ -9,8 +9,9 @@ namespace MKGraphics {
 	class VertexArray : public Object
 	{
 	public:
-		VertexArray(Program& program);
+		VertexArray();
 		~VertexArray();
+		void init(Program& program);
 
 		void bind();
 		void bindAndReset();
@@ -19,7 +20,7 @@ namespace MKGraphics {
 
 	private:
 		size_t _attribOffset;
-		Program& _program;
+		Program *_program;
 
 		static VertexArray *_bound;
 	};

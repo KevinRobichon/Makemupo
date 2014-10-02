@@ -11,6 +11,7 @@ namespace MKGraphics {
 	public:
 		Program();
 		~Program();
+		void init();
 
 		void linkShader(Shader& shader);
 		void link();

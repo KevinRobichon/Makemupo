@@ -20,8 +20,9 @@ namespace MKGraphics {
 			Fragment = GL_FRAGMENT_SHADER
 		};
 
-		Shader(Type type);
+		Shader();
 		~Shader();
+		void init(Type type);
 
 		void setSource(const char *source);
 		void fromFile(const char *filename);
