@@ -46,4 +46,9 @@ namespace MKGraphics {
 		return glGetUniformLocation(_id, name);
 	}
 
+	void Program::drawArrays(Primitive primitive, int offset, int number)
+	{
+		glDrawArrays((GLenum)primitive, offset, number);
+	}
+
 }

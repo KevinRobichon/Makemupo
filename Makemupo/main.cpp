@@ -8,12 +8,15 @@
 #include "Program.h"
 #include "Buffer.h"
 #include "VertexArray.h"
+#include "Vertex.h"
+#include "Mesh.h"
 #include <iostream>
 
 class TestApp : public MKEngine::Application {
 private:
-	MKGraphics::Buffer vbo;
-	MKGraphics::VertexArray vao;
+	//MKGraphics::Buffer vbo;
+	//MKGraphics::VertexArray vao;
+	MKEngine::Mesh mesh;
 	MKGraphics::Program program;
 
 	void setup() {
@@ -23,25 +26,28 @@ private:
 		const char vertexSource[] = R"END(
 			#version 430 core
 
-			layout (location = 0) in vec3 position;
+			in vec3 position;
+			in vec4 color;
+			out vec4 vs_color;
+
 			void main(void)
 			{
+				vs_color = color;
 				gl_Position = vec4(position, 1.0);
 			}
 		)END";
 		const char fragmentSource[] = R"END(
 			#version 430 core
 
+			in vec4 vs_color;
 			out vec4 color;
+
 			void main(void)
 			{
-				color = vec4(1.0, 0.0, 0.0, 1.0);
+				//color = vec4(1.0, 0.0, 0.0, 1.0);
+				color = vs_color;
 			}
 		)END";
-
-		float vertices[] = { 0.25, -0.25, 0.5,
-			-0.25, -0.25, 0.5,
-			0.25, 0.25, 0.5 };
 
 		MKGraphics::Shader vertexShader;
 		MKGraphics::Shader fragmentShader;
@@ -55,23 +61,22 @@ private:
 		program.linkShader(fragmentShader);
 		program.link();
 
-		vbo.init();
-		vbo.allocate(sizeof(vertices), MKGraphics::Buffer::Usage::StaticDraw);
-		vbo.fill(0, sizeof(vertices), vertices);
+		mesh.init(program);
 
-		vao.init(program);
-		vao.bindAndReset();
-		vao.attrib("position", 3, MKGraphics::Type::Float, 3 * sizeof(float));
-		vao.unbind();
+		MKEngine::Vertex v1, v2, v3;
+		v1.setPosition(0.25, -0.25, 0.5);
+		v2.setPosition(-0.25, -0.25, 0.5);
+		v3.setPosition(0.25, 0.25, 0.5);
+		v1.setColor(1.0, 0.0, 0.0);
+		v2.setColor(0.0, 1.0, 0.0);
+		v3.setColor(0.0, 0.0, 1.0);
+
+		mesh.addTriangle(v1, v2, v3);
+		mesh.pushVertices();
 	}
 
 	void render() {
-		GLfloat color[] = { 0.0, 1.0, 0.0, 1.0 };
-		glClearBufferfv(GL_COLOR, 0, color);
-		program.use();
-		vao.bind();
-		vbo.bind(MKGraphics::Buffer::Target::ArrayBuffer);
-		glDrawArrays(GL_TRIANGLES, 0, 3);
+		mesh.render();
 	}
 };
 

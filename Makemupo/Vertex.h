@@ -1,16 +1,19 @@
 #pragma once
 
+#include "VertexArray.h"
+
 namespace MKEngine {
 
-	class Vertex
+	struct Vertex
 	{
-	public:
-		Vertex();
-		~Vertex();
+		float _x, _y, _z;
+		float _r, _g, _b, _a;
 
-	private:
-		float x, y, z;
-		float r, g, b, a;
+		void setPosition(float x, float y, float z);
+		void setColor(float r, float g, float b, float a);
+		void setColor(float r, float g, float b);
+
+		static void configureVAO(MKGraphics::VertexArray& vao);
 	};
 
 }

@@ -30,6 +30,8 @@ namespace MKEngine {
 		startup();
 
 		while (!glfwWindowShouldClose(window)) {
+			GLfloat color[] = { 0.0, 0.0, 0.0, 1.0 };
+			glClearBufferfv(GL_COLOR, 0, color);
 			render();
 			glfwSwapBuffers(window);
 			glfwPollEvents();

@@ -9,6 +9,11 @@ namespace MKGraphics {
 	class Program : public Object
 	{
 	public:
+		enum class Primitive : GLenum {
+			Points = GL_POINTS,
+			Triangles = GL_TRIANGLES
+		};
+
 		Program();
 		~Program();
 		void init();
@@ -19,6 +24,8 @@ namespace MKGraphics {
 
 		int attribLocation(const char *name);
 		int uniformLocation(const char *name);
+
+		void drawArrays(Primitive primitive, int offset, int number);
 
 	private:
 		bool _linked;

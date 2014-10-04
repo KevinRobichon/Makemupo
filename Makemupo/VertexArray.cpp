@@ -38,12 +38,12 @@ namespace MKGraphics {
 		_bound = NULL;
 	}
 
-	void VertexArray::attrib(const char *name, int dimension, Type type, size_t size)
+	void VertexArray::attrib(const char *name, int dimension, Type type, size_t totalsize, size_t size)
 	{
 		if (_bound != this)
 			bind();
 		int location = _program->attribLocation(name);
-		glVertexAttribPointer(location, dimension, (GLenum)type, (GLenum)Bool::False, size, (void *)_attribOffset);
+		glVertexAttribPointer(location, dimension, (GLenum)type, (GLenum)Bool::False, totalsize, (void *)_attribOffset);
 		glEnableVertexAttribArray(location);
 		_attribOffset += size;
 	}

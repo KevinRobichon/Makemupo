@@ -16,7 +16,7 @@ namespace MKGraphics {
 		void bind();
 		void bindAndReset();
 		void unbind();
-		void attrib(const char *name, int dimension, Type type, size_t size);
+		void attrib(const char *name, int dimension, Type type, size_t totalsize, size_t size);
 
 	private:
 		size_t _attribOffset;
