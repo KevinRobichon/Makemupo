@@ -96,11 +96,6 @@ private:
 		mesh.update(time);
 		mesh.render();
 	}
-
-	void keyEvent(GLFWwindow* window, int key, int scancode, int action, int mods)
-	{
-
-	}
 };
 
 DECLARE_MAIN(TestApp)
