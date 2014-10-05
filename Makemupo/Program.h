@@ -25,6 +25,8 @@ namespace MKGraphics {
 		int attribLocation(const char *name);
 		int uniformLocation(const char *name);
 
+		void uniformMatrix4f(int location, Bool transpose, float *data);
+
 		void drawArrays(Primitive primitive, int offset, int number);
 
 	private:

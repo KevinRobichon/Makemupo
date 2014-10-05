@@ -69,6 +69,7 @@
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Buffer.cpp" />
+    <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Factory.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Mesh.cpp" />
@@ -82,6 +83,7 @@
   <ItemGroup>
     <ClInclude Include="Application.h" />
     <ClInclude Include="Buffer.h" />
+    <ClInclude Include="Camera.h" />
     <ClInclude Include="CommonGraphics.h" />
     <ClInclude Include="Factory.h" />
     <ClInclude Include="Mesh.h" />

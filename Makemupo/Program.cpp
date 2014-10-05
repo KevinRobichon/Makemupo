@@ -46,6 +46,11 @@ namespace MKGraphics {
 		return glGetUniformLocation(_id, name);
 	}
 
+	void Program::uniformMatrix4f(int location, Bool transpose, float *data)
+	{
+		glUniformMatrix4fv(location, 1, (GLenum)transpose, data);
+	}
+
 	void Program::drawArrays(Primitive primitive, int offset, int number)
 	{
 		glDrawArrays((GLenum)primitive, offset, number);

@@ -22,6 +22,8 @@ namespace MKEngine {
 		void pushVertices();
 		void render();
 
+		virtual void update(double time) {}
+
 	private:
 		std::vector<Vertex> _vertices;
 		MKGraphics::Program *_program;

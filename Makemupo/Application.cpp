@@ -21,19 +21,23 @@ namespace MKEngine {
 		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 		glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 
-		GLFWwindow *window = glfwCreateWindow(640, 480, "GL", NULL, NULL);
-		glfwMakeContextCurrent(window);
+		_window = glfwCreateWindow(_windowWidth, _windowHeight, "GL", NULL, NULL);
+		glfwMakeContextCurrent(_window);
 
 		glewExperimental = GL_TRUE;
 		glewInit();
 
 		startup();
+		_timeRef = glfwGetTime();
 
-		while (!glfwWindowShouldClose(window)) {
+		while (!glfwWindowShouldClose(_window)) {
+			double time = glfwGetTime();
 			GLfloat color[] = { 0.0, 0.0, 0.0, 1.0 };
+
 			glClearBufferfv(GL_COLOR, 0, color);
-			render();
-			glfwSwapBuffers(window);
+			render(time - _timeRef);
+			_timeRef = time;
+			glfwSwapBuffers(_window);
 			glfwPollEvents();
 		}
 

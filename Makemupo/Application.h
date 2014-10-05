@@ -16,7 +16,14 @@ namespace MKEngine {
 		virtual void setup() {}
 		virtual void startup() {}
 		virtual void shutdown() {}
-		virtual void render() {}
+		virtual void render(double time) {}
+
+		int _windowWidth;
+		int _windowHeight;
+		GLFWwindow *_window;
+
+	private:
+		double _timeRef;
 	};
 
 }
