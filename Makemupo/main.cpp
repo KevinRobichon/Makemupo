@@ -69,9 +69,9 @@ private:
 		program.link();
 
 		MKEngine::Vertex v1, v2, v3;
-		v1.setPosition(0.25, -0.25, 0.5);
-		v2.setPosition(-0.25, -0.25, 0.5);
-		v3.setPosition(0.25, 0.25, 0.5);
+		v1.setPosition(0.25, -0.25, -0.5);
+		v2.setPosition(-0.25, -0.25, -0.5);
+		v3.setPosition(0.25, 0.25, -0.5);
 		v1.setColor(1.0, 0.0, 0.0);
 		v2.setColor(0.0, 1.0, 0.0);
 		v3.setColor(0.0, 0.0, 1.0);

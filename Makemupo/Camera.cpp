@@ -15,7 +15,7 @@ namespace MKEngine {
 		_program = &program;
 		_up = glm::vec3(0.0, 1.0, 0.0);
 		_right = glm::vec3(1.0, 0.0, 0.0);
-		_forward = glm::vec3(0.0, 0.0, 1.0);
+		_forward = glm::vec3(0.0, 0.0, -1.0);
 
 		_position = glm::vec3(0.0, 0.0, 0.0);
 		_direction = _forward;
