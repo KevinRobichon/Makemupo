@@ -21,6 +21,8 @@ namespace MKEngine {
 		_direction = _forward;
 
 		_translation = glm::vec3(0.0);
+		_rotationUp = 0.0;
+		_rotationRight = 0.0;
 
 		_model = glm::mat4(1.0);
 		_view = glm::mat4(1.0);
@@ -36,20 +38,29 @@ namespace MKEngine {
 		_projection = glm::perspective(fov, aspectRatio, near, far);
 	}
 
-	void Camera::forward(float speed)
+	void Camera::rotate(float x, float y, float speed)
 	{
-		_translation += _forward * speed;
+		_rotationUp += x * speed;
+		_rotationRight += y * speed;
 	}
 
-	void Camera::backward(float speed)
-	{
-		_translation -= _forward * speed;
-	}
+	void Camera::forward(float speed) { _translation += _forward * speed; }
+	void Camera::backward(float speed) { _translation -= _forward * speed; }
+	void Camera::right(float speed) { _translation += _right * speed; }
+	void Camera::left(float speed) { _translation -= _right * speed; }
+	void Camera::up(float speed) { _translation += _up * speed; }
+	void Camera::down(float speed) { _translation -= _up * speed; }
 
 	void Camera::update(double time)
 	{
+		_direction = glm::rotate(_direction, _rotationUp, _up);
+		_direction = glm::rotate(_direction, _rotationRight, _right);
+		float angle = glm::orientedAngle(_forward, _direction, _up);
+		_translation = glm::rotate(_translation, angle, _up);
 		_position += _translation * (float)time;
 		_translation = glm::vec3(0.0);
+		_rotationUp = 0.0;
+		_rotationRight = 0.0;
 
 		_view = glm::lookAt(_position, _position + _direction, _up);
 	}

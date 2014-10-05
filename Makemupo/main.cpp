@@ -86,10 +86,27 @@ private:
 
 	void render(double time)
 	{
+		static double mx = 0, my = 0;
+		static double ox = 0, oy = 0;
+
 		if (glfwGetKey(_window, GLFW_KEY_DOWN))
 			camera.backward(4.0);
 		if (glfwGetKey(_window, GLFW_KEY_UP))
 			camera.forward(4.0);
+		if (glfwGetKey(_window, GLFW_KEY_LEFT))
+			camera.left(4.0);
+		if (glfwGetKey(_window, GLFW_KEY_RIGHT))
+			camera.right(4.0);
+		if (glfwGetKey(_window, GLFW_KEY_SPACE))
+			camera.up(4.0);
+		if (glfwGetKey(_window, GLFW_KEY_LEFT_SHIFT))
+			camera.down(4.0);
+
+		glfwGetCursorPos(_window, &mx, &my);
+		if (glfwGetMouseButton(_window, GLFW_MOUSE_BUTTON_LEFT))
+			camera.rotate(mx - ox, my - oy, 0.1);
+		ox = mx;
+		oy = my;
 
 		camera.update(time);
 		camera.use();

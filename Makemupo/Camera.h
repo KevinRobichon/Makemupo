@@ -6,6 +6,8 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include <glm/gtx/rotate_vector.hpp>
+#include <glm/gtx/vector_angle.hpp>
 
 namespace MKEngine {
 
@@ -18,23 +20,30 @@ namespace MKEngine {
 
 		void perspective(float fov, float aspectRatio, float near, float far);
 
+		void rotate(float x, float y, float speed);
 		void forward(float speed);
 		void backward(float speed);
+		void right(float speed);
+		void left(float speed);
+		void up(float speed);
+		void down(float speed);
 
 		void update(double time);
 		void use();
-
-	private:
-		MKGraphics::Program *_program;
 
 		glm::vec3 _up;
 		glm::vec3 _right;
 		glm::vec3 _forward;
 
+	private:
+		MKGraphics::Program *_program;
+
 		glm::vec3 _position;
 		glm::vec3 _direction;
 
 		glm::vec3 _translation;
+		float _rotationUp;
+		float _rotationRight;
 
 		glm::mat4 _model;
 		glm::mat4 _view;
