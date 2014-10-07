@@ -14,6 +14,9 @@
     <Filter Include="MKPatterns">
       <UniqueIdentifier>{7ad1fb0b-496a-42e1-90d9-945e3d07fdfe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="MKNoise">
+      <UniqueIdentifier>{b7b0b9ce-2346-409c-b561-e4204f87d79f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -52,6 +55,12 @@
     <ClCompile Include="Camera.cpp">
       <Filter>MKEngine</Filter>
     </ClCompile>
+    <ClCompile Include="Noise1D.cpp">
+      <Filter>MKNoise</Filter>
+    </ClCompile>
+    <ClCompile Include="Sinusoidal.cpp">
+      <Filter>MKNoise</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Program.h">
@@ -89,6 +98,12 @@
     </ClInclude>
     <ClInclude Include="Camera.h">
       <Filter>MKEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Noise1D.h">
+      <Filter>MKNoise</Filter>
+    </ClInclude>
+    <ClInclude Include="Sinusoidal.h">
+      <Filter>MKNoise</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

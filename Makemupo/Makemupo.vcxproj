@@ -73,10 +73,12 @@
     <ClCompile Include="Factory.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Mesh.cpp" />
+    <ClCompile Include="Noise1D.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Program.cpp" />
     <ClCompile Include="Prototype.cpp" />
     <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="Sinusoidal.cpp" />
     <ClCompile Include="Vertex.cpp" />
     <ClCompile Include="VertexArray.cpp" />
   </ItemGroup>
@@ -87,10 +89,12 @@
     <ClInclude Include="CommonGraphics.h" />
     <ClInclude Include="Factory.h" />
     <ClInclude Include="Mesh.h" />
+    <ClInclude Include="Noise1D.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Program.h" />
     <ClInclude Include="Prototype.h" />
     <ClInclude Include="Shader.h" />
+    <ClInclude Include="Sinusoidal.h" />
     <ClInclude Include="Vertex.h" />
     <ClInclude Include="VertexArray.h" />
   </ItemGroup>
