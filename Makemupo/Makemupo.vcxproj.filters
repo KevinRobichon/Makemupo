@@ -14,6 +14,9 @@
     <Filter Include="MKPatterns">
       <UniqueIdentifier>{7ad1fb0b-496a-42e1-90d9-945e3d07fdfe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="MKGame">
+      <UniqueIdentifier>{19b626ad-55da-476c-be69-58e52f19ff4f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -52,6 +55,12 @@
     <ClCompile Include="Camera.cpp">
       <Filter>MKEngine</Filter>
     </ClCompile>
+    <ClCompile Include="Chunk.cpp">
+      <Filter>MKGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Block.cpp">
+      <Filter>MKGame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Program.h">
@@ -89,6 +98,12 @@
     </ClInclude>
     <ClInclude Include="Camera.h">
       <Filter>MKEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Chunk.h">
+      <Filter>MKGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Block.h">
+      <Filter>MKGame</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
