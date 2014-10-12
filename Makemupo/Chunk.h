@@ -1,18 +1,25 @@
 #pragma once
 
 #include "Mesh.h"
+#include "Block.h"
+#include "BlockNatural.h"
+#include <vector>
 
 namespace MKGame {
 
-	class Chunk
+	class Chunk : public MKEngine::Mesh
 	{
 	public:
 		Chunk();
 		~Chunk();
-		void init(int size, int x, int y);
+
+		void prepare(int size, int x, int y);
 
 	private:
-		MKEngine::Mesh _mesh;
+		int index(int x, int y, int z);
+
+		std::vector<Block> _blocks;
+		int _size;
 	};
 
 }

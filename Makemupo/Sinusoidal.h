@@ -4,15 +4,13 @@
 namespace MKNoise
 {
 
+	class Sinusoidal : public MKNoise::Noise1D
+	{
+	public:
+		Sinusoidal();
+		~Sinusoidal();
 
-class Sinusoidal : public MKNoise::Noise1D
-{
-public:
-	Sinusoidal();
-	~Sinusoidal();
-
-	virtual void init(double salt);
-	virtual double getNoise(double x);
-};
+		virtual double getNoise(double x);
+	};
 
 };

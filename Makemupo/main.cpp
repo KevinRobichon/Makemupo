@@ -9,6 +9,7 @@
 #include "Vertex.h"
 #include "Mesh.h"
 #include "Camera.h"
+#include "Chunk.h"
 #include <iostream>
 
 class TestApp : public MKEngine::Application {
@@ -18,6 +19,7 @@ private:
 	MKEngine::Mesh mesh;
 	MKEngine::Camera camera;
 	MKGraphics::Program program;
+	MKGame::Chunk chunk;
 
 	void setup()
 	{
@@ -27,6 +29,8 @@ private:
 
 	void startup()
 	{
+		glEnable(GL_DEPTH_TEST);
+
 		const char vertexSource[] = R"END(
 			#version 430 core
 
@@ -80,6 +84,9 @@ private:
 		mesh.addTriangle(v1, v2, v3);
 		mesh.pushVertices();
 
+		chunk.init(program);
+		chunk.prepare(16, 0, 0);
+
 		camera.init(program);
 		camera.perspective(60.0, _windowWidth / _windowHeight, 0.1, 100.0);
 	}
@@ -110,6 +117,8 @@ private:
 
 		camera.update(time);
 		camera.use();
+		chunk.update(time);
+		chunk.render();
 		mesh.update(time);
 		mesh.render();
 	}

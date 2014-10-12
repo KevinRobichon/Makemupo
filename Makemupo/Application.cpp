@@ -32,9 +32,8 @@ namespace MKEngine {
 
 		while (!glfwWindowShouldClose(_window)) {
 			double time = glfwGetTime();
-			GLfloat color[] = { 0.0, 0.0, 0.0, 1.0 };
 
-			glClearBufferfv(GL_COLOR, 0, color);
+			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 			render(time - _timeRef);
 			_timeRef = time;
 			glfwSwapBuffers(_window);

@@ -13,14 +13,10 @@ namespace MKNoise
 	{
 	}
 
-	void Sinusoidal::init(double salt)
-	{
-		m_salt = salt;
-	}
-
 	double Sinusoidal::getNoise(double x)
 	{
-		return sin(x + m_salt);
+		double value = (sin(x + _salt) + 1.0) / 2.0;
+		return sin(x + _salt);
 	}
 
 };

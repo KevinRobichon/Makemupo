@@ -24,8 +24,10 @@ namespace MKEngine {
 
 		virtual void update(double time) {}
 
-	private:
+	protected:
 		std::vector<Vertex> _vertices;
+
+	private:
 		MKGraphics::Program *_program;
 
 		MKGraphics::VertexArray _vao;
