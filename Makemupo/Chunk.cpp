@@ -1,5 +1,5 @@
 #include "Chunk.h"
-#include <iostream>
+
 namespace MKGame {
 
 	Chunk::Chunk()
@@ -25,7 +25,6 @@ namespace MKGame {
 				}
 			}
 		}
-		std::cout << _vertices.size() << std::endl;
 		pushVertices();
 	}
 

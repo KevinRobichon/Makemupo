@@ -73,6 +73,9 @@
     <ClCompile Include="BlockNatural.cpp">
       <Filter>MKGame</Filter>
     </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>MKGraphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Program.h">
@@ -125,6 +128,9 @@
     </ClInclude>
     <ClInclude Include="BlockNatural.h">
       <Filter>MKGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>MKGraphics</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
